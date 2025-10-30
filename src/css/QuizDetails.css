@@ -1,0 +1,78 @@
+/* Container fills the entire screen */
+.quiz-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+  width: 100vw;  /* Full width */
+  background: linear-gradient(to right, #d1c4e9, #b2ebf2); /* Soft gradient background */
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* The central card */
+.quiz-card {
+  background-color: #fff; /* Light background for contrast */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto; /* Scroll only inside card if content overflows */
+  animation: fadeInZoom 0.8s ease forwards;
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.quiz-title {
+  font-size: 2.2rem;
+  color: #512da8; /* Deep purple */
+  margin-bottom: 20px;
+}
+
+/* Description text */
+.quiz-description {
+  font-size: 1.1rem;
+  color: #424242; /* Dark grey */
+  margin-bottom: 20px;
+}
+
+/* Additional quiz info */
+.quiz-info {
+  font-size: 1rem;
+  color: #616161;
+  margin-bottom: 30px;
+}
+
+/* Call-to-action button */
+.start-quiz-button {
+  background-color: #673ab7;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(103, 58, 183, 0.4);
+}
+
+.start-quiz-button:hover {
+  background-color: #5e35b1;
+  transform: scale(1.05);
+}
+
+/* Entry animation */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

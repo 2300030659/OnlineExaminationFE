@@ -1,0 +1,49 @@
+.rewards-container {
+  background-color: #1e1e2f;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.rewards-title {
+  font-size: 2rem;
+  color: #4cc9f0;
+  margin-bottom: 20px;
+}
+
+.rewards-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #cccccc;
+}
+
+.rewards-form {
+  margin-bottom: 20px;
+}
+
+.rewards-form label {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #eeeeee;
+}
+
+.rewards-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2c2c3e;
+  color: #ffffff;
+  width: 200px;
+}
+
+.reward-result {
+  font-size: 1.3rem;
+  color: #00ff88;
+  margin-top: 20px;
+}
+
+.reward-points {
+  font-weight: bold;
+}

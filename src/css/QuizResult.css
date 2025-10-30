@@ -1,0 +1,153 @@
+.result-container {
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.score {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #444;
+}
+
+.summary-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.summary {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+/* Scrollbar for WebKit */
+.summary::-webkit-scrollbar {
+  width: 8px;
+}
+.summary::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.summary::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 6px;
+}
+
+.question-card {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #4caf50;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.answer-text {
+  margin: 5px 0;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+/* Correct and Wrong Answer Styling */
+.correct-answer {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  border-left: 4px solid #66bb6a;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.wrong-answer {
+  color: #c62828;
+  background-color: #ffebee;
+  border-left: 4px solid #ef5350;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.back-button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 25px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.leaderboard-button {
+  padding: 10px 25px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.leaderboard-button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
