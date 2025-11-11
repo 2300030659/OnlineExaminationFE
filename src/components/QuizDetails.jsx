@@ -6,11 +6,11 @@ const QuizDetails = () => {
   const navigate = useNavigate();
 
   const quiz = {
-    name: "Simple Quiz On Mern Stack Development",
+    name: "Comprehensive Quiz on CI/CD and DevOps",
     description:
-      "Test your knowledge across various concepts including , react , mongodb and node !",
+      "Evaluate your understanding of Continuous Integration, Continuous Deployment, automation tools, containerization, and key DevOps practices!",
     totalQuestions: 10,
-    duration: "10 minutes",
+    duration: "12 minutes",
   };
 
   const handleStartQuiz = () => {
@@ -29,7 +29,7 @@ const QuizDetails = () => {
         <h1 className="quiz-title">{quiz.name}</h1>
         <p className="quiz-description">{quiz.description}</p>
         <div className="quiz-info">
-          <p><strong>📝 Total Questions:</strong> {quiz.totalQuestions}</p>
+          <p><strong>🧩 Total Questions:</strong> {quiz.totalQuestions}</p>
           <p><strong>⏱️ Duration:</strong> {quiz.duration}</p>
         </div>
         <button

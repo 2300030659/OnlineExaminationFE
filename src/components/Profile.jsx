@@ -12,17 +12,17 @@ const Profile = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userName");
-    navigate("/login"); // Redirect to login after logout
+    navigate("/", { replace: true }); // Redirect to homepage after logout
   };
 
-  // Dummy quiz data (you can replace this with real API data)
+  // ✅ Updated quiz data for CI/CD and DevOps
   const quizzes = [
-  { id: 1, name: "MongoDB", description: "Test your knowledge on MongoDB, the NoSQL database." },
-  { id: 2, name: "Node.js", description: "Explore server-side JavaScript with Node.js quizzes." },
-  { id: 3, name: "Express", description: "Questions covering Express framework concepts and usage." },
-  { id: 4, name: "React", description: "Challenge your React knowledge, from basics to hooks and components." },
-  { id: 5, name: "MERN Stack", description: "A comprehensive quiz on MongoDB, Express, React, and Node.js integration." }
-];
+    { id: 1, name: "Git & GitHub", description: "Assess your knowledge of version control, branching, and collaborative workflows using Git and GitHub." },
+    { id: 2, name: "Jenkins CI/CD", description: "Test your understanding of Jenkins pipelines, automation, and continuous integration concepts." },
+    { id: 3, name: "Docker & Containers", description: "Explore questions about containerization, Dockerfiles, and container orchestration basics." },
+    { id: 4, name: "Kubernetes", description: "Challenge yourself on Kubernetes architecture, pods, deployments, and service management." },
+    { id: 5, name: "DevOps Fundamentals", description: "A comprehensive quiz covering CI/CD pipelines, infrastructure as code, monitoring, and automation practices." }
+  ];
 
   return (
     <div
@@ -49,8 +49,8 @@ const Profile = () => {
       </nav>
 
       <div className="dashboard-content">
-        <h1>Dashboard</h1>
-        <p>Start your quiz journey today!</p>
+        <h1>DevOps Dashboard</h1>
+        <p>Enhance your CI/CD and DevOps skills by taking these quizzes!</p>
         <button 
           className="start-quiz-button" 
           onClick={() => navigate("/quiz-details")}

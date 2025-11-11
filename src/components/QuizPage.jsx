@@ -4,54 +4,79 @@ import "/src/css/QuizPage.css";
 
 const quizData = [
   {
-    question: "What does the 'M' in MERN stack stand for?",
-    options: ["MongoDB", "MySQL", "Mongoose", "Markdown"],
-    correct: "MongoDB",
+    question: "What does CI/CD stand for?",
+    options: [
+      "Continuous Integration and Continuous Deployment",
+      "Code Integration and Code Delivery",
+      "Continuous Implementation and Continuous Delivery",
+      "Central Integration and Central Deployment",
+    ],
+    correct: "Continuous Integration and Continuous Deployment",
   },
   {
-    question: "Which framework is used in the MERN stack for building server-side applications?",
-    options: ["Express.js", "React", "Next.js", "Bootstrap"],
-    correct: "Express.js",
+    question: "Which tool is primarily used for Continuous Integration?",
+    options: ["Jenkins", "Docker", "Kubernetes", "Git"],
+    correct: "Jenkins",
   },
   {
-    question: "What is the primary role of React in the MERN stack?",
-    options: ["Database", "Frontend UI", "Backend Server", "Authentication"],
-    correct: "Frontend UI",
+    question: "In DevOps, Infrastructure as Code (IaC) refers to:",
+    options: [
+      "Manually configuring infrastructure",
+      "Automating infrastructure setup using code",
+      "Using Excel sheets for configuration",
+      "Documenting infrastructure manually",
+    ],
+    correct: "Automating infrastructure setup using code",
   },
   {
-    question: "Node.js is used to:",
-    options: ["Style webpages", "Run JavaScript on the server", "Design databases", "Structure HTML"],
-    correct: "Run JavaScript on the server",
+    question: "Which of the following is a containerization platform?",
+    options: ["Docker", "Jenkins", "Ansible", "Terraform"],
+    correct: "Docker",
   },
   {
-    question: "Which of the following is a NoSQL database?",
-    options: ["MongoDB", "PostgreSQL", "MySQL", "Oracle"],
-    correct: "MongoDB",
+    question: "What is the main purpose of a pipeline in CI/CD?",
+    options: [
+      "To automate the process of building, testing, and deploying code",
+      "To store source code",
+      "To monitor network traffic",
+      "To host databases",
+    ],
+    correct: "To automate the process of building, testing, and deploying code",
   },
   {
-    question: "In MongoDB, data is stored in:",
-    options: ["Tables", "Spreadsheets", "Collections", "Schemas"],
-    correct: "Collections",
+    question: "Which tool is commonly used for container orchestration?",
+    options: ["Kubernetes", "GitHub", "Prometheus", "Maven"],
+    correct: "Kubernetes",
   },
   {
-    question: "Which hook is commonly used to manage side effects in React?",
-    options: ["useState", "useEffect", "useRef", "useContext"],
-    correct: "useEffect",
+    question: "Which configuration management tool is agentless?",
+    options: ["Ansible", "Chef", "Puppet", "SaltStack"],
+    correct: "Ansible",
   },
   {
-    question: "What command is used to start a Node.js app?",
-    options: ["npm run", "node app.js", "start node", "run app.js"],
-    correct: "node app.js",
+    question: "What is the primary goal of DevOps?",
+    options: [
+      "To improve collaboration between development and operations teams",
+      "To replace developers with automation",
+      "To eliminate testing",
+      "To reduce infrastructure costs only",
+    ],
+    correct: "To improve collaboration between development and operations teams",
   },
   {
-    question: "What is JSX?",
-    options: ["A JavaScript extension syntax", "A new version of JSON", "A server tool", "A testing library"],
-    correct: "A JavaScript extension syntax",
+    question: "Which of the following best describes a rolling deployment?",
+    options: [
+      "Deploying new versions to all servers simultaneously",
+      "Gradually replacing old instances with new ones",
+      "Deploying only during weekends",
+      "Completely shutting down old systems before deploying new ones",
+    ],
+    correct: "Gradually replacing old instances with new ones",
   },
   {
-    question: "Which command installs all dependencies listed in package.json?",
-    options: ["npm install", "npm build", "npm start", "node install"],
-    correct: "npm install",
+    question: "Which tool is used for monitoring in DevOps?",
+    options: ["Prometheus", "Docker", "GitLab", "NPM"],
+    correct: "Prometheus",
   },
 ];
 
@@ -60,7 +85,7 @@ const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(600);
+  const [timer, setTimer] = useState(720);
   const [userAnswers, setUserAnswers] = useState([]);
 
   useEffect(() => {
@@ -117,7 +142,7 @@ const QuizPage = () => {
 
   return (
     <div className="quiz-container">
-      <h1>Quiz</h1>
+      <h1>CI/CD & DevOps Quiz</h1>
       <p className="timer">
         Time Left: {Math.floor(timer / 60)}:{("0" + (timer % 60)).slice(-2)}
       </p>
