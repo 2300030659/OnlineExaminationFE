@@ -1,19 +1,22 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/api/exams";
+const API_URL = "http://localhost:8080/api/exams";
+
+export const addExam = async (exam) => {
+  const response = await axios.post(API_URL, exam);
+  return response.data;
+};
 
 export const getExams = async () => {
-  return await axios.get(API_BASE_URL);
+  const response = await axios.get(API_URL);
+  return response.data;
 };
 
-export const addExam = async (examData) => {
-  return await axios.post(API_BASE_URL, examData);
+export const updateExam = async (id, exam) => {
+  const response = await axios.put(`${API_URL}/${id}`, exam);
+  return response.data;
 };
 
-export const deleteExam = async (examId) => {
-  return await axios.delete(`${API_BASE_URL}/${examId}`);
-};
-
-export const updateExam = async (examId, examData) => {
-  return await axios.put(`${API_BASE_URL}/${examId}`, examData);
+export const deleteExamById = async (id) => {
+  await axios.delete(`${API_URL}/${id}`);
 };

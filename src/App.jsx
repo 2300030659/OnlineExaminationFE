@@ -12,10 +12,10 @@ import Resources from "./components/Resources";
 import FAQs from "./components/FAQs";
 import Blog from "./components/Blog";
 import ClaimPoints from "./components/ClaimPoints";
-import ExamList from "./components/Admin/ExamList";
 import AdminDashboard from "./components/Admin/AdminDashboard";
 import HomePage from "./components/HomePage";
-import ManageExams from "./components/Admin/ManageExams";
+import CreateExam from "./components/Admin/CreateExam";
+import AdminManageQuestions from "./components/Admin/AdminManageQuestions";
 
 
 const App = () => {
@@ -35,9 +35,9 @@ const App = () => {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/claim-points" element={<ClaimPoints />} />
-        <Route path="/admin/exams" element={<ExamList />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/manage-exams" element={<ManageExams />} />
+        <Route path="/admin-dashboard/create-exam" element={<CreateExam />} />
+                <Route path="/admin-dashboard/manage-questions" element={<AdminManageQuestions />} />
 
 
 

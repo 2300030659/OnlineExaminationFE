@@ -1,0 +1,112 @@
+/* AdminManageQuestions.css */
+
+/* Container for the section */
+.exam-section {
+  max-width: 900px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Form styling */
+.exam-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.exam-form input,
+.exam-form textarea,
+.exam-form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exam-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.exam-form button {
+  align-self: flex-start;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exam-form button:hover {
+  background: #1557b0;
+}
+
+/* Questions table */
+.exam-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.exam-table th,
+.exam-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.exam-table th {
+  background: #f2f2f2;
+}
+
+.exam-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Edit/Delete buttons in table */
+.exam-table button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.exam-table button:first-child {
+  background: #ffc107; /* Edit */
+  color: #fff;
+}
+
+.exam-table button:first-child:hover {
+  background: #e0a800;
+}
+
+.exam-table button:last-child {
+  background: #dc3545; /* Delete */
+  color: #fff;
+}
+
+.exam-table button:last-child:hover {
+  background: #b02a37;
+}
+
+/* MCQ options input */
+.exam-form div p {
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.exam-form div input {
+  margin-bottom: 5px;
+}

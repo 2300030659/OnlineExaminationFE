@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "/src/css/Login.css"; // same CSS for both Login & Signup popups
+import "/src/css/Login.css"; // shared CSS
 
 const SignUp = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    role: "STUDENT" // default role
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -41,9 +42,7 @@ const SignUp = ({ onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>
-          ✖
-        </button>
+        <button className="close-btn" onClick={onClose}>✖</button>
         <h1 className="title">Sign Up</h1>
 
         <form className="login-form" onSubmit={handleSubmit}>
@@ -73,6 +72,12 @@ const SignUp = ({ onClose }) => {
             onChange={handleChange}
             required
           />
+
+          {/* Role selection */}
+          <select name="role" value={formData.role} onChange={handleChange}>
+            <option value="STUDENT">Student</option>
+            <option value="ADMIN">Admin</option>
+          </select>
 
           {error && <p className="error-message">{error}</p>}
           {success && <p className="success-message">{success}</p>}

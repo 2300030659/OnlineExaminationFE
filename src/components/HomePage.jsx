@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import "../css/HomePage.css";
+import axios from "axios";
+import "/src/css/HomePage.css";
 import Login from "./Login";
 import SignUp from "./SignUp";
 
@@ -41,6 +42,7 @@ const Footer = () => (
 
 const HomePage = () => {
   const [popup, setPopup] = useState(null);
+  const [message, setMessage] = useState("");
 
   // 👇 Event listener for switching Login <-> Signup from inside popups
   useEffect(() => {
@@ -55,6 +57,29 @@ const HomePage = () => {
       document.removeEventListener("openLogin", handleOpenLogin);
     };
   }, []);
+
+  // ---------- Signup ----------
+  const handleSignup = async (signupData) => {
+    try {
+      const res = await axios.post("http://localhost:8080/api/users/signup", signupData);
+      setMessage(res.data.msg);
+      setPopup(null);
+    } catch (err) {
+      setMessage(err.response?.data?.msg || "Signup failed");
+    }
+  };
+
+  // ---------- Login ----------
+  const handleLogin = async (loginData) => {
+    try {
+      const res = await axios.post("http://localhost:8080/api/users/login", loginData);
+      setMessage(res.data.msg);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      setPopup(null);
+    } catch (err) {
+      setMessage(err.response?.data?.msg || "Login failed");
+    }
+  };
 
   return (
     <div className="fullscreen-container">
@@ -112,9 +137,16 @@ const HomePage = () => {
 
       <Footer />
 
+      {/* ---------- Message ---------- */}
+      {message && <p className="global-message">{message}</p>}
+
       {/* ---------- Popups ---------- */}
-      {popup === "login" && <Login onClose={() => setPopup(null)} />}
-      {popup === "signup" && <SignUp onClose={() => setPopup(null)} />}
+      {popup === "login" && (
+        <Login onClose={() => setPopup(null)} onSubmit={handleLogin} />
+      )}
+      {popup === "signup" && (
+        <SignUp onClose={() => setPopup(null)} onSubmit={handleSignup} />
+      )}
     </div>
   );
 };

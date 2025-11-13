@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "/src/css/Login.css"; // using same CSS as SignUp
+import "/src/css/Login.css"; // shared CSS
 
 const Login = ({ onClose }) => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -24,7 +24,7 @@ const Login = ({ onClose }) => {
       // 🔐 Local Admin Login
       if (formData.email === "admin@gmail.com" && formData.password === "786") {
         alert("✅ Admin Login Successful!");
-        localStorage.setItem("userRole", "admin");
+        localStorage.setItem("userRole", "ADMIN");
         localStorage.setItem("userName", "Admin");
         onClose();
         navigate("/admin-dashboard");
@@ -33,14 +33,18 @@ const Login = ({ onClose }) => {
 
       // 🌐 API User Login
       const res = await axios.post("http://localhost:8080/api/users/login", formData);
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("userName", res.data.user.name);
-      localStorage.setItem("userRole", "user");
+
+      // Save user info including role from backend
+      const user = res.data.user;
+      localStorage.setItem("userName", user.name);
+      localStorage.setItem("userRole", user.role); 
+      localStorage.setItem("token", res.data.token || ""); // in case you later implement JWT
 
       setSuccess("✅ Login successful!");
       setTimeout(() => {
         onClose();
-        navigate("/profile");
+        if (user.role === "ADMIN") navigate("/admin-dashboard");
+        else navigate("/profile");
       }, 800);
     } catch (err) {
       console.error("Login error:", err);
@@ -53,9 +57,7 @@ const Login = ({ onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>
-          ✖
-        </button>
+        <button className="close-btn" onClick={onClose}>✖</button>
         <h1 className="title">Login</h1>
 
         <form className="login-form" onSubmit={handleSubmit}>
