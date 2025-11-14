@@ -5,89 +5,126 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
-  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.35s ease;
 }
 
 /* Popup Content */
 .popup-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  width: 380px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  padding: 2.2rem;
+  border-radius: 18px;
+  width: 390px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
   position: relative;
   text-align: center;
-  animation: slideUp 0.3s ease;
+  animation: slideUp 0.35s ease;
+  border: 1px solid #f0f0f0;
+  color: #222; /* Text darkened */
 }
 
 .popup-content h2 {
-  color: #ff6600;
-  margin-bottom: 1rem;
+  color: #ff6a1a;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
+/* Form fields */
 .popup-content form {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .popup-content input,
 .popup-content select {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
   font-size: 1rem;
+  transition: all 0.25s ease;
+  background: #fafafa;
+  color: #222;  /* Input text dark */
 }
 
+.popup-content input::placeholder,
+.popup-content select {
+  color: #777; /* Placeholder visible */
+}
+
+.popup-content input:focus,
+.popup-content select:focus {
+  border-color: #ff6a1a;
+  box-shadow: 0 0 0 3px rgba(255, 106, 26, 0.15);
+  outline: none;
+}
+
+/* Start Button */
 .popup-content .start-button {
-  background: #ff6600;
-  color: white;
+  background: #ff6a1a;
+  color: #fff;
   border: none;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.25s ease;
 }
 
 .popup-content .start-button:hover {
-  background: #e65c00;
+  background: #e65d00;
 }
 
+/* Close Button */
 .close-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #ff6600;
+  top: 14px;
+  right: 14px;
+  background: #ff6a1a;
   border: none;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
+.close-btn:hover {
+  background: #e65d00;
+  transform: scale(1.1);
+}
+
+/* Extra text */
 .popup-text {
   margin-top: 1rem;
-  color: #444;
+  color: #333; /* darker */
+  font-size: 0.95rem;
 }
 
 .login-link-popup {
-  color: #ff6600;
-  font-weight: bold;
+  color: #ff6a1a;
+  font-weight: 600;
   cursor: pointer;
+  text-decoration: underline;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
+  from { transform: translateY(35px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }

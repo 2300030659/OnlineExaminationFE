@@ -3,21 +3,25 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: #1a1a1a; /* readable */
 }
 
+/* Logo animations (optional) */
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em rgba(0, 102, 204, 0.3));
 }
 
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.3));
+}
+
+/* Spin animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +37,16 @@
   }
 }
 
+/* Cards */
 .card {
   padding: 2em;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
 }
 
+/* Secondary text */
 .read-the-docs {
-  color: #888;
+  color: #555;
 }
