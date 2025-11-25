@@ -14,7 +14,7 @@ const QuizResult = () => {
       <p className="score">Your Score: <strong>{score}</strong> / {userAnswers.length}</p>
 
       <div className="summary">
-        <h2 className="summary-title">Answer Summary</h2>
+        <h2 className="summary-title">Answer Summary</h2>  
         {userAnswers.map((entry, index) => {
           const isCorrect = entry.selected === entry.correct;
           return (
